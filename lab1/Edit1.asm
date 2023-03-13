@@ -1,9 +1,10 @@
 /**********************************************/
-/*               Work with cycle              */
+/*              Work with cycles              */
 /**********************************************/
 
 #include "def21060.h"
 #define N 4000
+#define cnShiftGreen 50
 
 //---------------------------------------------
 // Source array
@@ -40,16 +41,25 @@ start:
 		I9 = output;
 		M8 = 1;
 		M9 = 125;
-	
-		LCNTR = 115, DO xxx UNTIL LCE;
+		
+		R2 = cnShiftGreen;
+		R3 = 255;
+		R4 = 255;
+
+		LCNTR = 125, DO xxx UNTIL LCE;
 			I0 = I1;
 			I8 = I9;
 			LCNTR = 125, DO yyy UNTIL LCE;
 				R1 = DM(I0, M0);
-yyy:			PM(I8, M8) = R1;
-			MODIFY(I1, M1);
+				R0 = R0 OR FDEP R1 BY 8:8;
+				R0 = R0 + R2;
+				R3 = R3 - R0;
+				IF LE R0 = R4;
+				R1 = R1 OR FDEP R0 BY 8:8;
+yyy:				PM(I8, M8) = R1;
+		MODIFY(I1, M1);
 xxx:		MODIFY(I9, M9);
 
 wait:	IDLE;
-		jump wait; 
+	jump wait; 
 //---------------------------------------------
