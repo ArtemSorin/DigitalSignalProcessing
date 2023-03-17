@@ -1,16 +1,9 @@
 <?xml version="1.0" standalone="no"?>
-<?xml-stylesheet type="text/xsl" href="file:///C:/Program Files (x86)/Analog Devices/VisualDSP 5.0/System/linker_log.xsl"?>
-<DOCUMENT gen_time='Sun Mar 12 13:01:12 2023
+<?xml-stylesheet type="text/xsl" href="file:///C:/Program Files (x86)/Analog Devices/VisualDSP 5.1.2/System/linker_log.xsl"?>
+<DOCUMENT gen_time='Thu Mar 16 11:56:18 2023
 '>
-<MSG id='02A95190' mid='li2060' type='Warning' >
-<TEXT><![CDATA[The following input section(s) that contain program code
-        and/or data have not been placed into the executable for processor 'P0'
-        as there are no relevant commands specified in the LDF:
-
-        Edit1.doj(pm_data)]]></TEXT>
-</MSG>
-<MSG id='02A952F0' mid='li1060' type='Error' >
-<TEXT><![CDATA[The following symbols are referenced, but not mapped:
-        'output' referenced from Edit1.doj(pm_code)]]></TEXT>
+<MSG id='02A0AA00' mid='li1021' type='Error' >
+<TEXT><![CDATA[The following symbols referenced in processor 'P0' could not be resolved:
+        'update_pack' referenced from 'lab1.doj']]></TEXT>
 </MSG>
 </DOCUMENT>
