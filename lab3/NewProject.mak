@@ -38,20 +38,20 @@ ifeq ($(MAKECMDGOALS),NewProject_Debug)
 
 NewProject_Debug : ./Debug/NewProject.dxe 
 
-./Debug/Edit1.doj :./Edit1.asm $(VDSP)/21k/include/def21060.h 
-	@echo ".\Edit1.asm"
-	$(VDSP)/easm21k.exe .\Edit1.asm -proc ADSP-21060 -file-attr ProjectName=NewProject -g -o .\Debug\Edit1.doj -MM
+./Debug/lab3.doj :./lab3.asm $(VDSP)/21k/include/def21060.h 
+	@echo ".\lab3.asm"
+	$(VDSP)/easm21k.exe .\lab3.asm -proc ADSP-21060 -file-attr ProjectName=NewProject -g -o .\Debug\lab3.doj -MM
 
-./Debug/NewProject.dxe :./NewProject.ldf ./Debug/Edit1.doj 
+./Debug/NewProject.dxe :./lab3.ldf ./Debug/lab3.doj 
 	@echo "Linking..."
-	$(VDSP)/cc21k.exe .\Debug\Edit1.doj -T .\NewProject.ldf -L .\Debug -add-debug-libpaths -flags-link -od,.\Debug -o .\Debug\NewProject.dxe -proc ADSP-21060 -flags-link -MM
+	$(VDSP)/cc21k.exe .\Debug\lab3.doj -T .\lab3.ldf -L .\Debug -add-debug-libpaths -flags-link -od,.\Debug -o .\Debug\NewProject.dxe -proc ADSP-21060 -flags-link -MM
 
 endif
 
 ifeq ($(MAKECMDGOALS),NewProject_Debug_clean)
 
 NewProject_Debug_clean:
-	-$(RM) ".\Debug\Edit1.doj"
+	-$(RM) ".\Debug\lab3.doj"
 	-$(RM) ".\Debug\NewProject.dxe"
 	-$(RM) ".\Debug\*.ipa"
 	-$(RM) ".\Debug\*.opa"

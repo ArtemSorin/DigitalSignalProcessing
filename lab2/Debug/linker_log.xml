@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Program Files (x86)/Analog Devices/VisualDSP 5.1.2/System/linker_log.xsl"?>
+<DOCUMENT gen_time='Fri Mar 24 20:19:22 2023
+'>
+<MSG id='02B1A580' mid='li1141' type='Error' >
+<FILE><![CDATA[.\lab2.ldf]]></FILE>
+<FILE_LINE><![CDATA[52]]></FILE_LINE>
+<TEXT><![CDATA[No input files specified for the processor 'P0']]></TEXT>
+</MSG>
+</DOCUMENT>

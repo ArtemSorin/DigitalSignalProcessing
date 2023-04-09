@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Program Files (x86)/Analog Devices/VisualDSP 5.1.2/System/linker_map_ss1.xsl"?>
+<!DOCTYPE DOCUMENT SYSTEM "file:///C:/Program Files (x86)/Analog Devices/VisualDSP 5.1.2/System/linker_map.dtd">
+<DOCUMENT>
+<LINKPROJECT guid='190489f616f29d867' id='02A94F70' name='P0' orig_file_name='.\Debug\lab1.dxe' architecture='ADSP-21060' >
+<FILE_NAME><![CDATA[.\Debug\lab1.dxe]]></FILE_NAME>
+<MEMORY id='02A715F8' name='pm_irq_seg' start_address='0x20004' end_address='0x20007' type='PM' qualifier='RAM' width='0x30' words_used='0x4' words_unused='0x0' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION name='pm_irq_seg' id='02A88C50' memory_id='02A715F8' type='SHT_PROGBITS' start_address='0x20004' word_size='0x4' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='02A8C6E0' name='pm_irq_svc' start_address='0x20004' size='0x4' element_at='0x0' >
+<INPUT_FILE><![CDATA[lab1.doj]]></INPUT_FILE>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='02A71528' name='pm_code_seg' start_address='0x20100' end_address='0x201ff' type='PM' qualifier='RAM' width='0x30' words_used='0x7' words_unused='0xf9' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION name='pm_code_seg' id='02A88CA0' memory_id='02A71528' type='SHT_PROGBITS' start_address='0x20100' word_size='0x7' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='02A8C8D8' name='pm_code' start_address='0x20100' size='0x7' element_at='0x0' >
+<INPUT_FILE><![CDATA[lab1.doj]]></INPUT_FILE>
+<SYMBOL name='start' address='0x20100' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait' address='0x20105' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='02A71518' name='dm_data_seg' start_address='0x30000' end_address='0x300ff' type='DM' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x100' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='02A71538' name='pm_data_seg' start_address='0x24000' end_address='0x241ff' type='PM' qualifier='RAM' width='0x20' words_used='0x5' words_unused='0x1fb' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION name='pm_data_seg' id='02A88E30' memory_id='02A71538' type='SHT_PROGBITS' start_address='0x24000' word_size='0x5' word_size_unmapped='0x0' word_size_reserved='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='02A8C380' name='pm_data' start_address='0x24000' size='0x5' element_at='0x0' >
+<INPUT_FILE><![CDATA[lab1.doj]]></INPUT_FILE>
+<SYMBOL name='AVG' address='0x24000' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='MAXT' address='0x24004' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+</LINKPROJECT>
+</DOCUMENT>

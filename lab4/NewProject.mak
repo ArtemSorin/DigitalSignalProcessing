@@ -38,20 +38,25 @@ ifeq ($(MAKECMDGOALS),NewProject_Debug)
 
 NewProject_Debug : ./Debug/NewProject.dxe 
 
-./Debug/Edit1.doj :./Edit1.asm $(VDSP)/21k/include/def21060.h 
-	@echo ".\Edit1.asm"
-	$(VDSP)/easm21k.exe .\Edit1.asm -proc ADSP-21060 -file-attr ProjectName=NewProject -g -o .\Debug\Edit1.doj -MM
+./Debug/Project4.doj :./Project4.asm $(VDSP)/21k/include/asm_sprt.h $(VDSP)/21k/include/def21060.h $(VDSP)/21k/include/sys/anomaly_macros_rtl.h 
+	@echo ".\Project4.asm"
+	$(VDSP)/easm21k.exe .\Project4.asm -proc ADSP-21060 -file-attr ProjectName=NewProject -g -o .\Debug\Project4.doj -MM
 
-./Debug/NewProject.dxe :./NewProject.ldf ./Debug/Edit1.doj 
+Debug/Project4.doj :Project4.c $(VDSP)/21k/include/def21060.h $(VDSP)/21k/include/signal.h Project4.h 
+	@echo ".\Project4.c"
+	$(VDSP)/cc21k.exe -c .\Project4.c -file-attr ProjectName=NewProject -g -structs-do-not-overlap -no-multiline -double-size-32 -warn-protos -proc ADSP-21060 -o .\Debug\Project4.doj -MM
+
+./Debug/NewProject.dxe :$(VDSP)/21k/ldf/ADSP-21060.LDF $(VDSP)/21k/lib/060_hdr.doj ./Debug/Project4.doj $(VDSP)/21k/lib/libc.dlb $(VDSP)/21k/lib/libdsp.dlb $(VDSP)/21k/lib/libio.dlb $(VDSP)/21k/lib/libcpp.dlb 
 	@echo "Linking..."
-	$(VDSP)/cc21k.exe .\Debug\Edit1.doj -T .\NewProject.ldf -L .\Debug -add-debug-libpaths -flags-link -od,.\Debug -o .\Debug\NewProject.dxe -proc ADSP-21060 -flags-link -MM
+	$(VDSP)/cc21k.exe .\Debug\Project4.doj .\Debug\Project4.doj -L .\Debug -add-debug-libpaths -flags-link -od,.\Debug -o .\Debug\NewProject.dxe -proc ADSP-21060 -MM
 
 endif
 
 ifeq ($(MAKECMDGOALS),NewProject_Debug_clean)
 
 NewProject_Debug_clean:
-	-$(RM) ".\Debug\Edit1.doj"
+	-$(RM) ".\Debug\Project4.doj"
+	-$(RM) "Debug\Project4.doj"
 	-$(RM) ".\Debug\NewProject.dxe"
 	-$(RM) ".\Debug\*.ipa"
 	-$(RM) ".\Debug\*.opa"
